@@ -24,12 +24,10 @@ export default async function createWhiskey({ args, cwd }: Options) {
         message: 'Pick NPM client',
         choices: [
           { title: 'npm', value: 'npm' },
-          { title: 'cnpm', value: 'cnpm' },
-          { title: 'tnpm', value: 'tnpm' },
           { title: 'yarn', value: 'yarn' },
           { title: 'pnpm', value: 'pnpm' }
         ],
-        initial: 4
+        initial: 2
       }
     ],
     {
@@ -45,6 +43,7 @@ export default async function createWhiskey({ args, cwd }: Options) {
     data: {
       version: version.includes('-canary.') ? version : `^${version}`,
       npmClient,
+      addPackAction: npmClient === 'npm' ? 'install' : 'add',
       registry
     },
     questions: [

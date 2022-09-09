@@ -15,7 +15,7 @@ TODO
 ## Setup
 
 ```sh
-$ pnpm add
+$ {{{ npmClient }}} {{{ addPackAction }}} {{{ name }}}
 ```
 
 ## Props

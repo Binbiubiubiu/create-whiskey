@@ -1,8 +1,6 @@
 # Whiskey
 
-::: tip
 a tool for packaging vue component
-:::
 
 [![NPM version](https://img.shields.io/npm/v/create-whiskey.svg?style=flat)](https://npmjs.org/package/create-whiskey) [![NPM downloads](http://img.shields.io/npm/dm/create-whiskey.svg?style=flat)](https://npmjs.org/package/create-whiskey)
 
