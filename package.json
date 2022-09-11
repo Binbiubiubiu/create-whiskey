@@ -3,7 +3,7 @@
   "version": "0.0.2",
   "description": "a tool for packaging vue component",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "typings": "dist/index.d.ts",
   "files": [
     "template",
     "bin",
@@ -13,7 +13,7 @@
     "create-whiskey": "bin/create-whiskey.js"
   },
   "scripts": {
-    "build": "pnpm tsc",
+    "build": "pnpm tsc && api-extractor run -l",
     "dev": "pnpm tsc --watch",
     "format": "pretter --write",
     "prepare": "husky install",
@@ -43,6 +43,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
+    "@microsoft/api-extractor": "^7.30.0",
     "@types/jest": "^29.0.0",
     "@types/node": "^18.7.15",
     "@types/prompts": "^2.0.14",

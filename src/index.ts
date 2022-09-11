@@ -11,7 +11,10 @@ interface Options {
   cwd: string;
 }
 
-export default async function createWhiskey({ args, cwd }: Options) {
+/**
+ * @public
+ */
+async function createWhiskey({ args, cwd }: Options) {
   const [name = basename(cwd)] = args._;
   const target = name ? join(cwd, name + '') : cwd;
   const registry = 'https://registry.npmjs.org/';
@@ -68,3 +71,5 @@ export default async function createWhiskey({ args, cwd }: Options) {
   // install
   installWithNpmClient({ npmClient, cwd: target });
 }
+
+export default createWhiskey;
