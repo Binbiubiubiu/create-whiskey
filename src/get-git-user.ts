@@ -32,8 +32,7 @@ const format = (name: string, email: string) =>
   name + (email ? '<' + email + '>' : '');
 
 (async () => {
-  let { userEmail } = await getGitConfigs('user.name', 'user.email');
-  let userName;
+  let { userName, userEmail } = await getGitConfigs('user.name', 'user.email');
   if (!userName) {
     userName = os.userInfo().username;
   }
