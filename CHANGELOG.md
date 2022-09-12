@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/Binbiubiubiu/whiskey/compare/v0.0.4...v0.0.5) (2022-09-12)
+
+### Bug Fixes
+
+- 修复问题 ([4c048a4](https://github.com/Binbiubiubiu/whiskey/commit/4c048a4bf56a6cc6856a5366d97a2c6e1e1901a6))
+
 ### [0.0.4](https://github.com/Binbiubiubiu/whiskey/compare/v0.0.3...v0.0.4) (2022-09-12)
 
 ### Bug Fixes
