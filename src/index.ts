@@ -5,6 +5,7 @@ import {
   yParser
 } from '@umijs/utils';
 import { join, basename } from 'path';
+import { getGitUser } from './util';
 
 interface Options {
   args: yParser.Arguments;
@@ -19,6 +20,7 @@ async function createWhiskey({ args, cwd }: Options) {
   const target = name ? join(cwd, name + '') : cwd;
   const registry = 'https://registry.npmjs.org/';
   const { version } = require('../package.json');
+  const gitUser = await getGitUser();
   const { npmClient } = await prompts(
     [
       {
@@ -53,17 +55,20 @@ async function createWhiskey({ args, cwd }: Options) {
       {
         name: 'name',
         type: 'text',
-        message: `Input NPM package name`
+        message: `Input NPM package name`,
+        initial: name
       },
       {
         name: 'description',
         type: 'text',
-        message: `Input NPM package description`
+        message: `Input NPM package description`,
+        initial: 'The description of a vue component'
       },
       {
         name: 'author',
         type: 'text',
-        message: `Input NPM package author (Name <email@example.com>)`
+        message: `Input NPM package author (Name <email@example.com>)`,
+        initial: gitUser
       }
     ]
   });
