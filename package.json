@@ -14,6 +14,7 @@
   },
   "scripts": {
     "build": "pnpm tsc && api-extractor run -l",
+    "prepublish": "npm run build",
     "dev": "pnpm tsc --watch",
     "format": "pretter --write",
     "prepare": "husky install",
