@@ -19,9 +19,7 @@ pkgName = line2Camel(pkgName);
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
-    alias: {
-      vue: "vue-demi",
-    },
+    alias: {},
   },
   build: {
     lib: {
