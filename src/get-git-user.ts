@@ -1,11 +1,15 @@
 import util from 'util';
 import childProcess from 'child_process';
-import os from 'os';
+
 const exec = util.promisify(childProcess.exec);
 
 async function getGitConfig(key: string) {
-  const config = await exec(`git config ${key}`);
-  const r = config.stdout.replace(/[\n\r]/g, '');
+  let r = '';
+  try {
+    const config = await exec(`git config ${key}`);
+    [r] = config.stdout.split('\n');
+  } catch (e) {}
+
   return r;
 }
 
@@ -32,10 +36,10 @@ const format = (name: string, email: string) =>
   name + (email ? '<' + email + '>' : '');
 
 (async () => {
-  let { userName, userEmail } = await getGitConfigs('user.name', 'user.email');
-  if (!userName) {
-    userName = os.userInfo().username;
-  }
+  const { userName, userEmail } = await getGitConfigs(
+    'user.name',
+    'user.email'
+  );
 
   const msg = format(userName, userEmail);
   process.send?.(msg);

@@ -4,6 +4,7 @@ import {
   prompts,
   yParser
 } from '@umijs/utils';
+import os from 'os';
 import { join, basename } from 'path';
 import { getGitUser } from './util';
 
@@ -68,7 +69,7 @@ async function createWhiskey({ args, cwd }: Options) {
         name: 'author',
         type: 'text',
         message: `Input NPM package author (Name <email@example.com>)`,
-        initial: gitUser
+        initial: gitUser || os.userInfo().username
       }
     ]
   });
