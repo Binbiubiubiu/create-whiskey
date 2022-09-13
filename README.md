@@ -15,11 +15,14 @@ a tool for packaging vue component
 
 ```sh
 
-// Installation
-$ pnpm i -g create-whiskey
+// Use npm
+$ npm create whiskey my-component
 
-// Create a project
-$ create-whiskey my-component
+// Use yarn
+$ yarn create whiskey my-component
+
+// Use pnpm
+$ pnpm create whiskey my-component
 
 ```
 
