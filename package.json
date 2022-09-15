@@ -76,6 +76,6 @@
   },
   "packageManager": "pnpm@7.3.0",
   "dependencies": {
-    "@umijs/utils": "^4.0.19"
+    "@umijs/utils": "^4.0.21"
   }
 }
