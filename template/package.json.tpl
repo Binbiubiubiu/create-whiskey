@@ -32,7 +32,7 @@
     "docs:deploy": "gh-pages -d docs/.vitepress/dist"
   },
   "dependencies": {
-    "vue-demi": "^0.13.11"
+    "vue-demi": "*"
   },
   "devDependencies": {
     "@algolia/client-search": "^4.9.1",
