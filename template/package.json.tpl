@@ -24,7 +24,9 @@
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "prepare": "husky install",
-    "release": "standard-version",
+    "prerelease": "pnpm build",
+    "release": "release-it",
+    "postrelease": "zx ./scripts/postrelease.mjs",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:deploy": "gh-pages -d docs/.vitepress/dist"
@@ -36,6 +38,7 @@
     "@algolia/client-search": "^4.9.1",
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
+    "@release-it/conventional-changelog": "^5.1.0",
     "@rushstack/eslint-patch": "^1.1.4",
     "@types/jsdom": "^20.0.0",
     "@types/node": "^16.11.56",
@@ -53,14 +56,15 @@
     "lint-staged": "^13.0.3",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.7.1",
-    "standard-version": "^9.5.0",
+    "release-it": "^15.4.2",
     "typescript": "~4.7.4",
     "vite": "^3.0.9",
     "vite-plugin-dts": "^1.4.1",
     "vitest": "^0.23.0",
     "vue": "^3.2.38",
     "vue-tsc": "^0.40.7",
-    "vitepress": "1.0.0-alpha.13"
+    "vitepress": "1.0.0-alpha.13",
+    "zx": "^7.0.8"
   },
   "peerDependencies": {
     "@vue/composition-api": "^1.0.0-rc.1",

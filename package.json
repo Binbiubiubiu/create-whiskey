@@ -4,11 +4,7 @@
   "description": "a tool for packaging vue component",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
-  "files": [
-    "template",
-    "bin",
-    "dist"
-  ],
+  "files": ["template", "bin", "dist"],
   "bin": {
     "create-whiskey": "bin/create-whiskey.js"
   },
@@ -20,17 +16,14 @@
     "prepare": "husky install",
     "test": "jest",
     "test:cov": "jest --collectCoverage",
-    "release": "standard-version",
+    "prerelease": "pnpm build",
+    "release": "release-it",
+    "postrelease": "zx ./scripts/postrelease.mjs",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:deploy": "gh-pages -d docs/.vitepress/dist"
   },
-  "keywords": [
-    "package tool",
-    "vue",
-    "component",
-    "vue component"
-  ],
+  "keywords": ["package tool", "vue", "component", "vue component"],
   "author": "Binbiubiubiu<2632003786@qq.com>",
   "license": "MIT",
   "repository": {
@@ -42,9 +35,11 @@
   },
   "homepage": "https://github.com/Binbiubiubiu/create-whiskey#readme",
   "devDependencies": {
+    "@algolia/client-search": "^4.14.2",
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
     "@microsoft/api-extractor": "^7.30.0",
+    "@release-it/conventional-changelog": "^5.1.0",
     "@types/jest": "^29.0.0",
     "@types/node": "^18.7.15",
     "@types/prompts": "^2.0.14",
@@ -54,6 +49,7 @@
     "jest": "^29.0.2",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
+    "release-it": "^15.4.2",
     "standard-version": "^9.5.0",
     "typescript": "^4.8.2",
     "vitepress": "1.0.0-alpha.13"
@@ -62,17 +58,11 @@
     "access": "public"
   },
   "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
+    "extends": ["@commitlint/config-conventional"]
   },
   "lint-staged": {
-    "*.{js,md,json}": [
-      "prettier --write --ignore-unknown"
-    ],
-    "*.ts": [
-      "prettier --parser=typescript --write"
-    ]
+    "*.{js,md,json}": ["prettier --write --ignore-unknown"],
+    "*.ts": ["prettier --parser=typescript --write"]
   },
   "packageManager": "pnpm@7.3.0",
   "dependencies": {
