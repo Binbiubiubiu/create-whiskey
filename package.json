@@ -35,12 +35,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Binbiubiubiu/whiskey.git"
+    "url": "git+https://github.com/Binbiubiubiu/create-whiskey.git"
   },
   "bugs": {
-    "url": "https://github.com/Binbiubiubiu/whiskey/issues"
+    "url": "https://github.com/Binbiubiubiu/create-whiskey/issues"
   },
-  "homepage": "https://github.com/Binbiubiubiu/whiskey#readme",
+  "homepage": "https://github.com/Binbiubiubiu/create-whiskey#readme",
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
