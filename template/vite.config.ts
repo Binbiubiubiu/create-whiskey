@@ -21,6 +21,9 @@ export default defineConfig({
   resolve: {
     alias: {},
   },
+  optimizeDeps: {
+    exclude: ["vue-demi"],
+  },
   build: {
     lib: {
       entry: resolve(__dirname, "./components/index.ts"),
@@ -28,7 +31,7 @@ export default defineConfig({
       fileName: "index",
     },
     rollupOptions: {
-      external: ["vue"],
+      external: ["vue", "vue-demi"],
       output: {
         globals: {
           vue: "Vue",

@@ -33,6 +33,7 @@
     "vue-demi": "^0.13.11"
   },
   "devDependencies": {
+    "@algolia/client-search": "^4.9.1",
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
     "@rushstack/eslint-patch": "^1.1.4",

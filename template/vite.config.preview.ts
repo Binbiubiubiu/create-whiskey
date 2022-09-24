@@ -10,5 +10,8 @@ export default defineConfig({
       "@components": fileURLToPath(new URL("./components", import.meta.url)),
     },
   },
+  optimizeDeps: {
+    exclude: ["vue-demi"],
+  },
   plugins: [vue()],
 });
